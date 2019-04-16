@@ -41,7 +41,8 @@ public class MemberInfoMng {
 	private Scanner scan;
 
 	public MemberInfoMng() {
-		memberService = new MemberServiceImpl();
+//		memberService = new MemberServiceImpl();
+		memberService = MemberServiceImpl.getInstance();
 		scan = new Scanner(System.in);
 	}
 

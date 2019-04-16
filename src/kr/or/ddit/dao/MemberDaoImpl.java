@@ -18,7 +18,20 @@ public class MemberDaoImpl implements IMemberDao {
 	private Statement stmt;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
-
+	
+//	private static MemberDaoImpl dao;
+	private static IMemberDao dao;
+	
+	private MemberDaoImpl() {} // 생성자
+	
+//	public static MemberDaoImpl getInstance() {
+	public static IMemberDao getInstance() {
+		if(dao == null) {
+			dao = new MemberDaoImpl();
+		}
+		return dao; 
+	}
+	
 	@Override
 	public int insertMember(MemberVO mv) {
 
